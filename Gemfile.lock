@@ -266,7 +266,7 @@ DEPENDENCIES
   bulma-rails
   byebug
   capybara (>= 2.15)
-  carrierwave
+  carrierwave (~> 2.0)
   database_cleaner
   jbuilder (~> 2.7)
   listen (~> 3.2)
