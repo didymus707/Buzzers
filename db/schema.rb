@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_08_16_150930) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.integer "author_id", null: false
     t.string "title"

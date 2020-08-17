@@ -1,25 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Articles</h1>
+<div class="container is-fluid">
+  <div class="notification">
+    <h1>Articles</h1>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="level">
+    <div class="level-left">
+      <% @articles.each do |article| %>
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-128x128">
+              <%= image_tag article.image.full.url, alt: 'Article image' %>
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <%= truncate(article.text, length: 50) %>
+              </p>
+            </div>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <%= link_to 'Show', article %>
+                <%= link_to 'Edit', edit_article_path(article) %>
+                <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </nav>
+          </div>
+        </article>
+        
+          
+        
+      <% end %>
+    </div>
+  </div>
+</div>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<article class="media">
+  <div class="media-right">
+    <button class="delete"></button>
+  </div>
+</article>
 
-<br>
 
 <%= link_to 'New Article', new_article_path %>

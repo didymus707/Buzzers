@@ -1,4 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+<div class="columns">
+  <div class="column is-8">
+    <h1 class="title is-2 has-text-grey discussion-title"><%= @article.title %></h1>
+    <h3 class="subtitle is-5 has-text-grey-lighter">by <%= @article.author.username %></h3>
+    <div class="level">
+      <div class="level-left"></div>
+      <div class="level-right">
+        <% if article_path(@article) %>
+        <div class="buttons">
+            <%= link_to 'Edit article', edit_article_path(@article), class:'button'%>
+            <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Delete article?" }, class:'button' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <figure class="image">
+      <p class="image is-480x480">
+        <%= image_tag @article.image.full.url, alt: 'Article image' %>
+      </p>
+    </figure>
+    <div class="content"><%= @article.text %></div>
+  </div>
+
+</div>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
