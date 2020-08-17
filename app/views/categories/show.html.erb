@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="level">
+  <div class="level-left">
+  <h1 class="title is-2"><%= @category.name %></h1>
+  </div>
+  <div class="level-right">
+  <%# if has_role?(:admin) %>
+    <%= link_to 'Edit', edit_category_path(@category), class:"button" %> |
+    <%= link_to 'Back', categories_path %>
+  <%# end %>
+  </div>
+</div>
+

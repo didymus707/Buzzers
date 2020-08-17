@@ -42,6 +42,24 @@
         %>
       </div>
     </div>
+
+   <div class="field">
+    <label class="label">Category</label>
+    <div class="control has-icons-left">
+      <span class="select">
+        <%= f.collection_select :category_ids, 
+                                      Category.all,
+                                      :id,
+                                      :name,
+                                      prompt: "Select category" 
+        %>
+      </span>
+      <span class="icon is-small is-left">
+        <i class="fa fa-tag"></i>
+      </span>
+    </div>
+  </div>
+
   </div>
 
   <div class="form-actions">
