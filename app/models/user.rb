@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :articles, foreign_key: :author_id, dependent: :destroy
+  acts_as_voter
   
   validates_presence_of :name
   validates :username, uniqueness: true

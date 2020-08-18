@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :like, :unlike]
+  impressionist action: [:show], unique: [:impressionable_type, :impressionable_id, :session_hash]
 
   # GET /articles
   # GET /articles.json
@@ -59,6 +60,20 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def like
+    @article.liked_by current_user
+    respond_to do |format|
+      format.html { redirect_to articles_path }
+    end
+  end
+
+  def unlike
+    @article.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_to articles_path }
     end
   end
 

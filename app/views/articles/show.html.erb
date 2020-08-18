@@ -16,9 +16,9 @@
       </div>
     </div>
     <figure class="image">
-      <p class="image is-480x480">
-        <%= image_tag @article.image.full.url, alt: 'Article image' %>
-      </p>
+      <!--<p class="image is-480x480s">
+      </p>-->
+        <%= image_tag @article.image_url, alt: 'Article image' %>
     </figure>
     <div class="content"><%= @article.text %></div>
   </div>
