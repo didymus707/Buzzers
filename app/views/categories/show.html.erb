@@ -2,7 +2,25 @@
 
 <div class="level">
   <div class="level-left">
-  <h1 class="title is-2"><%= @category.name %></h1>
+    <h1 class="title is-2"><%= @category.name %></h1>
+    <div class="level-left">
+      <% @articles.each do |article| %>
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-458x458">
+              <%= image_tag article.image_url, alt: 'Article image' %>
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <%= truncate(article.text, length: 50) %>
+              </p>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    </div>
   </div>
   <div class="level-right">
   <%# if has_role?(:admin) %>

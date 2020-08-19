@@ -1,7 +1,12 @@
-
 <%= simple_form_for(@article) do |f| %>
   <%= f.error_notification %>
+
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
 
   <div class="form-inputs">
     <div class="field">
@@ -43,22 +48,30 @@
       </div>
     </div>
 
-   <div class="field">
-    <label class="label">Category</label>
-    <div class="control has-icons-left">
-      <span class="select">
-        <%= f.collection_select :category_ids, 
-                                      Category.all,
-                                      :id,
-                                      :name,
-                                      prompt: "Select category" 
-        %>
-      </span>
-      <span class="icon is-small is-left">
-        <i class="fa fa-tag"></i>
-      </span>
+    <div class="field">
+      <label class="label">Category</label>
+      <div class="control has-icons-left">
+        <span>
+          <%= f.collection_check_boxes :category_ids, 
+                                        Category.all,
+                                        :id,
+                                        :name
+          %>
+        </span>
+      </div>
     </div>
-  </div>
+
+    <div class="field">
+      <label class="label">Create New Category</label>
+      <div class="control has-icons-left">
+        <span>
+          <%= f.simple_fields_for :categories, @article.categories.build do |fields| %>
+            <%= fields.input :name %>
+            <%= fields.input :priority %>
+          <% end %>
+        </span>
+      </div>
+    </div>
 
   </div>
 

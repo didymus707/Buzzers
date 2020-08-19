@@ -2,29 +2,23 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy, :like, :unlike]
   impressionist action: [:show], unique: [:impressionable_type, :impressionable_id, :session_hash]
 
-  # GET /articles
-  # GET /articles.json
   def index
     @articles = Article.all.order('created_at desc')
+    @featured_article = Article.unscoped.order(cached_weighted_total: :desc).limit(1)
+    @article = @featured_article.last
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
   def show
   end
 
-  # GET /articles/new
   def new
     @article = current_user.articles.build
     @categories = Category.all
   end
 
-  # GET /articles/1/edit
   def edit
   end
 
-  # POST /articles
-  # POST /articles.json
   def create
     @article = current_user.articles.build(article_params)
 
@@ -39,8 +33,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /articles/1
-  # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
       if @article.update(article_params)
@@ -53,8 +45,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.json
   def destroy
     @article.destroy
     respond_to do |format|
@@ -78,13 +68,16 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+    def timeline_articles
+      @timeline_posts ||= Post.all.ordered_by_most_recent.includes(:user)
+    end
+
     def set_article
       @article = Article.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :text, :image, category_ids:[])
+      params.require(:article).permit(:title, :text, :image, category_ids:[], categories_attributes: [:name, :priority])
     end
 end

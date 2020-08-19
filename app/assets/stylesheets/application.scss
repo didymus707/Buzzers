@@ -14,4 +14,48 @@
  *= require_self
  */
 
- @import 'bulma';
+ $color: #4E443E;
+//  @import 'bulma';
+@import 'uniset';
+
+.nav-content {
+  display: flex;
+  background: #fff;
+  color: #4E443E;
+  .nav-brand {
+    display: flex;
+    width: 70%;
+    border-bottom: 4px solid #4E443E;
+    padding: 22px 0;
+    .brand {
+      grid-column: 1/3;
+    .brand-font {
+      font-family: 'Permanent Marker', cursive;
+      color: #4E443E;
+      font-size: 30px;
+      }
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: auto;
+      width: 60%;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #4E443E;
+  }
+  .session-box {
+    margin-left: auto;
+    padding: 22px 0;
+  }
+}
+
+.image {
+  border-radius: 50%;
+  img {
+    border-radius: 50%;
+  }
+}

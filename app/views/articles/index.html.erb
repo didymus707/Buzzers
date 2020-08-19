@@ -1,20 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container is-fluid">
-  <div class="notification">
-    <h1>Articles</h1>
+<h1 class='title'>Articles</h1>
+<div class="article">
+  <div>
+    <section>
+        <figure class="media-left">
+          <p class="image is-480x480">
+            <%= image_tag @article.image_url, alt: 'Article image' %>
+          </p>
+        </figure>
+        <p><%= truncate(@article.text, length: 30) %></p>
+    </section>
   </div>
 
-  <div class="level">
-    <div class="level-left">
-      <% @articles.each do |article| %>
+  <%# <div class="level"> %>
+    <% @articles.each do |article| %>
+      <div class="level-left">
         <article class="media">
           <figure class="media-left">
             <p class="image is-128x128">
-              <%= image_tag article.image.thumb.url, alt: 'Article image' %>
+              <%= image_tag article.image_url, alt: 'Article image' %>
             </p>
-          </figure>
-          <nav class="level shot-analytics">
+          <nav class="level">
             <div class="level-left"></div>
               <div class="level-right">
               <div class="level-item views data">
@@ -26,7 +33,7 @@
               <div class="level-item comments data">
                 <%= link_to article do %>
                   <span class="icon"><i class="fa fa-comment"></i></span>
-                  <%# <%= article.comments.count %> %>
+                  <%= article.comments.count %>
                 <% end %>
               </div>
               <div class="level-item likes">
@@ -53,6 +60,7 @@
               </div>
             </div>
           </nav>
+          </figure>
           <div class="media-content">
             <div class="content">
               <p>
@@ -68,19 +76,16 @@
             </nav>
           </div>
         </article>
-        
-          
-        
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <% end %>
+  <%# </div> %>
 </div>
 
-<article class="media">
+<!--<article class="media">
   <div class="media-right">
     <button class="delete"></button>
   </div>
 </article>
 
-<%= link_to 'New Article', new_article_path %>
+<%#= link_to 'New Article', new_article_path %>
 

@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/ed33990053.js" crossorigin="anonymous"></script>
@@ -22,48 +23,48 @@
       </div>
     <% end %>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-          <%= link_to root_path, class:"navbar-item" do %>
-            <h1 class="title is-5 has-text-dark">Buzzers</h1>
-          <% end  %>
-        <div class="navbar-burger burger" data-target="navbar">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div id="navbar" class="navbar-menu">
-
-        <div class="navbar-start">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <p class="control">
-                <%= link_to 'Shots', root_path , class:"button is-dark" %>
-              </p>
+    <nav class="nav-container" role="navigation" aria-label="main navigation">
+      <div class="nav-content">
+        <div class="nav-brand">
+          <div class="brand">
+              <%= link_to root_path, class:"navbar-item" do %>
+                <h1 class="brand-font">Buzzers.</h1>
+              <% end  %>
+            <div class="navbar-burger burger" data-target="navbar">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
+
+          <ul class="nav-links">
+            <li><a class="links" href="#">links</a></li>
+            <li><a class="links" href="#">links</a></li>
+            <li><a class="links" href="#">links</a></li>
+            <li><a class="links" href="#">links</a></li>
+          </ul>
         </div>
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <% if logged_in? %>
-                <p class="control">
-                  <%= link_to new_article_path, class:"button is-primary"  do %>
-                    <span class="icon is-small"><i class="fa fa-upload"></i></span>
-                    <span>New Article</span>
-                  <% end %>
-                </p>
-                <p class="control">
-                  <%= link_to "Log Out", logout_path, method: :delete, class:"button is-dark" %>
-                </p>
-              <% else %>
-                  <%= link_to "LOGIN", login_path, class:"is-dark" %> <%= %> | <%= %>
-                  <%= link_to "REGISTER", new_user_path, class:"is-dark"%>
-              <% end %>
-            </div>
+
+        <div class="session-box">
+          <div class="menu">
+            <% if logged_in? %>
+              <p class="control">
+                <%= link_to new_article_path, class:"button is-primary"  do %>
+                  <span class="icon is-small"><i class="fa fa-upload"></i></span>
+                  <span>New Article</span>
+                <% end %>
+              </p>
+              <p class="control">
+                <%= link_to "Log Out", logout_path, method: :delete, class:"button is-dark" %>
+              </p>
+            <% else %>
+              <p class="session-cta">
+                <%= link_to "LOGIN", login_path, class:"is-dark" %> | 
+                <%= link_to "REGISTER", new_user_path, class:"is-dark"%>
+                <span class="icon is-small"><i class="fa fa-search"></i></i></span>
+              </p>
+            <% end %>
           </div>
         </div>
       </div>

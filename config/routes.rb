@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :categories
   get 'home/index'
-  root 'home#index'
+  root 'articles#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

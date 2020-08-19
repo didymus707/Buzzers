@@ -23,6 +23,13 @@
     <div class="content"><%= @article.text %></div>
   </div>
 
+  <section>
+    <h2 class="subtitle is-5"><%= pluralize(@article.comments.count, 'comment')%></h2>
+    <%= render @article.comments %>
+    <hr />
+
+  </section>
+
 </div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
