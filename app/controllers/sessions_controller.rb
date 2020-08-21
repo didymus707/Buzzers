@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
 
     if @user
       log_in @user
-      redirect_to user_path(current_user.id)
+      redirect_to root_path
     else
-      flash[:danger] = "Incorrect username or Sign up if you don't have an account"
+      flash[:alert] = "Incorrect username or Sign up if you don't have an account"
       render 'new'
     end
   end

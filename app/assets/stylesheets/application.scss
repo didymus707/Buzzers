@@ -15,18 +15,25 @@
  */
 
  $color: #4E443E;
-//  @import 'bulma';
-@import 'uniset';
+ @import 'bulma';
+//  @import 'uniset';
+
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: black;
+}
 
 .nav-content {
   display: flex;
   background: #fff;
   color: #4E443E;
+  align-items: center;
   .nav-brand {
     display: flex;
     width: 70%;
     border-bottom: 4px solid #4E443E;
-    padding: 22px 0;
+    padding: 10px 10px;
     .brand {
       grid-column: 1/3;
     .brand-font {
@@ -41,6 +48,7 @@
       justify-content: space-between;
       margin-left: auto;
       width: 60%;
+      font-family: 'Lato', sans-serif;
     }
   }
   a {
@@ -49,13 +57,183 @@
   }
   .session-box {
     margin-left: auto;
-    padding: 22px 0;
+    padding: 10px 15px;
+    font-family: 'Lato', sans-serif;
+    width: 23%;
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
 
-.image {
-  border-radius: 50%;
-  img {
-    border-radius: 50%;
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  background: #847d7a;
+  height: 100%;
+}
+
+.form-container {
+  height: 79vh;
+  .form-wrapper {
+    display: flex;
+    .form-item {
+      margin: 0 auto;
+    }
   }
+}
+
+.main-con {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 400px 150px;
+  font-family: 'Lato', sans-serif;
+  .art-img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    .content-con {
+      padding: 20px;
+      height: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .art-head {
+        color: #F45F0E;
+      }
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.categories {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  .cat-img {
+    width: 25%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    .cat-content {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .cat-head {
+        text-decoration: underline yellow 4px;
+      }
+    }
+  }
+}
+
+.category-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  .article-wrapper {
+    flex:1 50%;
+    display: flex;
+    .cat-art-img {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      .art-image {
+        flex: 1;
+      }
+    }
+    .art-text {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      background: rgba(247, 239, 239, 0.616);
+      .art-head {
+        text-decoration: underline #F79B01 4px;
+        color: #888277;
+        font-size: 15px;
+      }
+      .art-title {
+        color: 4D443E;
+        font-family: 'Bangers', cursive;
+        margin: 10px 0;
+      }
+      p {
+        font-family: 'Lato', sans-serif;
+        font-size: 13px;
+        color: black;
+      }
+    }
+  }
+  .article-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4E443F;
+  padding: 13px;
+  .footer-brand {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    .footer-font {
+      color: #fff;
+    }
+  }
+  .copyright {
+    width: 40%;
+    .prpc {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-family: 'Lato', sans-serif;
+      a {
+        color: #F45F0E;
+      }
+      .prpc-item:nth-child(3) {
+        color: #fff;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .contacts {
+    width: 23%;
+    .contact-links {
+      display: flex;
+      font-size: 14px;
+      color: white;
+      .ul-links {
+        display: flex;
+        justify-content: space-between;
+        width: 34%;
+        color: #F45F0E;
+        margin-left: 10px;
+        a {
+          border-radius: 50%;
+          border-right: 1px solid #F45F0E;
+          padding: 5px;
+          background: #F45F0E;
+        }
+        i {
+          color: #3c3838;
+        }
+      }
+    }
+  }
+
 }

@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lato&family=Permanent+Marker&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/ed33990053.js" crossorigin="anonymous"></script>
@@ -27,21 +27,24 @@
       <div class="nav-content">
         <div class="nav-brand">
           <div class="brand">
-              <%= link_to root_path, class:"navbar-item" do %>
-                <h1 class="brand-font">Buzzers.</h1>
-              <% end  %>
-            <div class="navbar-burger burger" data-target="navbar">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+            <%= link_to root_path, class:"navbar-item" do %>
+              <h1 class="brand-font">Buzzers.</h1>
+            <% end  %>
           </div>
 
           <ul class="nav-links">
-            <li><a class="links" href="#">links</a></li>
-            <li><a class="links" href="#">links</a></li>
-            <li><a class="links" href="#">links</a></li>
-            <li><a class="links" href="#">links</a></li>
+            <li>
+              <%= link_to root_path, class:"links" do %>
+                Home
+              <% end  %>
+            </li>
+            <% @categories.each do |cat| %>
+              <li>
+                <%= link_to category_path(cat.id), class:"links" do %>
+                  <%= cat.name %>
+                <% end  %>
+              </li>
+            <% end %>
           </ul>
         </div>
 
@@ -49,31 +52,72 @@
         <div class="session-box">
           <div class="menu">
             <% if logged_in? %>
-              <p class="control">
-                <%= link_to new_article_path, class:"button is-primary"  do %>
+              <p class="new-art">
+                <%= link_to new_article_path, class:"is-primary"  do %>
                   <span class="icon is-small"><i class="fa fa-upload"></i></span>
                   <span>New Article</span>
                 <% end %>
               </p>
-              <p class="control">
-                <%= link_to "Log Out", logout_path, method: :delete, class:"button is-dark" %>
+              <p class="logout">
+                <%= link_to "Log Out", logout_path, method: :delete, class:"is-dark" %>
               </p>
             <% else %>
               <p class="session-cta">
                 <%= link_to "LOGIN", login_path, class:"is-dark" %> | 
                 <%= link_to "REGISTER", new_user_path, class:"is-dark"%>
-                <span class="icon is-small"><i class="fa fa-search"></i></i></span>
               </p>
             <% end %>
+            <span class="icon is-small"><i class="fa fa-search"></i></i></span>
           </div>
         </div>
       </div>
     </nav>
     
-    <section class="section">
-      <div class="container">
+    <section class="wrapper">
+      <div class="inner-wrapper">
         <%= yield %>
       </div>
     </section>
+
+    <footer>
+      <div class="footer-brand">
+        <%= link_to root_path, class:"footer-brand-item" do %>
+          <h1 class="footer-font">Buzzers.</h1>
+        <% end  %>
+      </div>
+      <div class="copyright">
+        <ul class="prpc">
+          <li class="prpc-item">
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li class="prpc-item">
+            <a href="#">Terms & Condition</a>
+          </li>
+          <li class="prpc-item">Copyright 2020. All rights reserved.</li>
+        </ul>
+      </div>
+      <div class="contacts">
+        <div class="contact-links">
+          Connect with us:
+          <ul class="ul-links">
+            <li>
+              <a href="#">
+                <span><i class="fab fa-twitter-square"></i></span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><i class="fab fa-instagram"></i></span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><i class="fab fa-facebook-f"></i></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

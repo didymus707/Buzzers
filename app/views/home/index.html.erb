@@ -1,2 +1,29 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<main class="main-con">
+  <div class="main-art-con">
+    <div class="art-img" style="background: url(<%= @article.image_url %>); background-size: 100% 100%; background-repeat: no-repeat; background-position: center">
+      <div class="content-con">
+        <h5 class="art-head"><%= @article.title %></h5>
+        <p class="art-con">
+          <%= truncate(@article.text, length: 100) %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="random">
+    <div class="ran-img">
+      
+    </div>
+  </div>
+  <div class="categories">
+    <% @categories.each do |cat| %>
+      <div class="cat-img" style="background: url(<%= cat.articles[0].image_url %>); background-size: 100% 100%; background-repeat: no-repeat; background-position: center">
+        <div class="cat-content">
+          <h5 class="cat-head"><%= cat.name %></h5>
+          <p class="cat-con">
+            <%= cat.articles[0].title %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>

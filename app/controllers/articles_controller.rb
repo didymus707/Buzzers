@@ -1,14 +1,16 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy, :like, :unlike]
-  impressionist action: [:show], unique: [:impressionable_type, :impressionable_id, :session_hash]
+  before_action :set_article, only: %i[show edit update destroy like unlike]
+  impressionist action: [:show], unique: %i[impressionable_type impressionable_id session_hash]
 
   def index
-    @articles = Article.all.order('created_at desc')
+    @articles = Article.all
     @featured_article = Article.unscoped.order(cached_weighted_total: :desc).limit(1)
     @article = @featured_article.last
+    @categories = Category.all.ordered_by_priority
   end
 
   def show
+    @categories = Category.all.ordered_by_priority
   end
 
   def new
@@ -16,8 +18,7 @@ class ArticlesController < ApplicationController
     @categories = Category.all
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @article = current_user.articles.build(article_params)
@@ -54,13 +55,20 @@ class ArticlesController < ApplicationController
   end
 
   def like
+    @article = Article.find(params[:id])
     @article.liked_by current_user
+    puts '------------------------------------'
+    puts @article.id
+    puts @article.title
+    puts @article.votes_for.size
+    puts '------------------------------------'
     respond_to do |format|
       format.html { redirect_to articles_path }
     end
   end
 
   def unlike
+    @article = Article.find(params[:id])
     @article.unliked_by current_user
     respond_to do |format|
       format.html { redirect_to articles_path }
@@ -69,15 +77,11 @@ class ArticlesController < ApplicationController
 
   private
 
-    def timeline_articles
-      @timeline_posts ||= Post.all.ordered_by_most_recent.includes(:user)
-    end
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
-    def set_article
-      @article = Article.find(params[:id])
-    end
-
-    def article_params
-      params.require(:article).permit(:title, :text, :image, category_ids:[], categories_attributes: [:name, :priority])
-    end
+  def article_params
+    params.require(:article).permit(:title, :text, :image, category_ids: [], categories_attributes: %i[name priority])
+  end
 end

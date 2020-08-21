@@ -2,16 +2,6 @@
 
 <h1 class='title'>Articles</h1>
 <div class="article">
-  <div>
-    <section>
-        <figure class="media-left">
-          <p class="image is-480x480">
-            <%= image_tag @article.image_url, alt: 'Article image' %>
-          </p>
-        </figure>
-        <p><%= truncate(@article.text, length: 30) %></p>
-    </section>
-  </div>
 
   <%# <div class="level"> %>
     <% @articles.each do |article| %>

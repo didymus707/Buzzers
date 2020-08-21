@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: %i[show edit update destroy]
 
   def index
     @categories = Category.all.ordered_by_priority
@@ -8,14 +8,14 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @articles = @category.articles
+    @categories = Category.all.ordered_by_priority
   end
 
   def new
     @category = Category.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @category = Category.new(category_params)
@@ -53,11 +53,11 @@ class CategoriesController < ApplicationController
 
   private
 
-    def set_category
-      @category = Category.find(params[:id])
-    end
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
-    def category_params
-      params.require(:category).permit(:name, :priority)
-    end
+  def category_params
+    params.require(:category).permit(:name, :priority)
+  end
 end
