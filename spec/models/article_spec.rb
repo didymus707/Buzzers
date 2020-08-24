@@ -1,12 +1,13 @@
 require 'rails_helper'
-include CarrierWave::Test::Matchers
+require 'carrierwave/test/matchers'
 
 RSpec.describe Article, type: :model do
+  include CarrierWave::Test::Matchers
 
-  let(:art) do 
+  let(:art) do
     create(:article)
   end
-  
+
   it 'is valid' do
     expect(art).to be_valid
   end

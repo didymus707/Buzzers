@@ -31,18 +31,18 @@ gem 'acts_as_votable'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bulma-rails'
 gem 'carrierwave', '~> 2.0'
+gem 'factory_bot_rails'
 gem 'impressionist'
 gem 'mini_magick'
 gem 'simple_form'
-gem "factory_bot_rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
-  gem 'shoulda-matchers'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'shoulda-matchers'
 end
 
 group :development do

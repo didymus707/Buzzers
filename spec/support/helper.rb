@@ -13,7 +13,6 @@ module Features
 
     fill_in 'Username', with: username
 
-
     click_on 'Log in'
   end
 end

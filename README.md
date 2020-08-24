@@ -1,24 +1,70 @@
-# README
+# Buzzers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ Buzzers is about lifestyle articles as it contains articles of your choices that are separated into different categories
 
-Things you may want to cover:
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby v2.7.0
+- Ruby on Rails 6
+- Capybara
+- RSpec
+- Postgres
 
-* Configuration
+## Live Demo
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get a local copy up and running follow these simple example steps.
 
-* Deployment instructions
 
-* ...
+### Setup
+
+Install gems with:
+
+```
+bundle install
+```
+
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+
+
+### Usage
+
+Start server with:
+
+```
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
+
+## Author
+
+👤 **Adewale Orotayo** 
+ [@didymus707](https://github.com/didymus707)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Microverse](https://www.microverse.org)
+
+

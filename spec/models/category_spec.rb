@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-
-  let(:cat) do 
+  let(:cat) do
     create(:category)
   end
-  
+
   it 'is valid' do
     expect(cat).to be_valid
   end
