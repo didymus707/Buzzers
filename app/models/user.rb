@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   acts_as_voter
 
-  validates_presence_of :name
+  validates_presence_of :name, :username
   validates :username, uniqueness: true
   validates_length_of :name, minimum: 3, too_short: 'please enter at least 3 characters!'
 end

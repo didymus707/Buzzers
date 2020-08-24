@@ -38,12 +38,14 @@
                 Home
               <% end  %>
             </li>
-            <% @categories.each do |cat| %>
-              <li>
-                <%= link_to category_path(cat.id), class:"links" do %>
-                  <%= cat.name %>
-                <% end  %>
-              </li>
+            <% if logged_in? %>
+              <% @categories.each do |cat| %>
+                <li>
+                  <%= link_to category_path(cat.id), class:"links" do %>
+                    <%= cat.name %>
+                  <% end  %>
+                </li>
+              <% end %>
             <% end %>
           </ul>
         </div>

@@ -57,11 +57,7 @@ class ArticlesController < ApplicationController
   def like
     @article = Article.find(params[:id])
     @article.liked_by current_user
-    puts '------------------------------------'
-    puts @article.id
-    puts @article.title
-    puts @article.votes_for.size
-    puts '------------------------------------'
+
     respond_to do |format|
       format.html { redirect_to articles_path }
     end
