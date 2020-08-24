@@ -4,7 +4,7 @@ FactoryBot.define do
     username { "jodi" }
   end
 
-  factory :article, aliases: [:articles] do
+  factory :article do
     author factory: :user
     title { "The Beatles" }
     image  { Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/fixtures/suarez.jpg'))) }
@@ -12,7 +12,6 @@ FactoryBot.define do
   end
 
   factory :category do
-    articles factory: :user
     name { 'Sports' }
     priority { 1 }
   end

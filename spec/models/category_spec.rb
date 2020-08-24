@@ -11,7 +11,7 @@ RSpec.describe Category, type: :model do
   end
 
   it 'is not valid without a name' do
-    cat.title = nil
+    cat.name = nil
     expect(cat).to_not be_valid
   end
 
