@@ -67,7 +67,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.unliked_by current_user
     respond_to do |format|
-      format.html { redirect_back fallback_location: category_path  }
+      format.html { redirect_back fallback_location: category_path }
     end
   end
 

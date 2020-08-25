@@ -14,8 +14,8 @@
  *= require_self
  */
 
- $colour: #4e443e;
- $color: #4e443e;
+$colour: #4e443e;
+$color: #4e443e;
 
 @import 'bulma';
 @import 'uniset';
@@ -204,7 +204,7 @@ img {
   }
 }
 
-footer {
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: center;

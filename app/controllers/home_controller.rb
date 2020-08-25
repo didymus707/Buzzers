@@ -5,4 +5,3 @@ class HomeController < ApplicationController
     @categories = Category.all.ordered_by_priority
   end
 end
-
