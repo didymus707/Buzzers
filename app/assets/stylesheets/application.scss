@@ -14,8 +14,9 @@
  *= require_self
  */
 
- $color: #4E443E;
- @import 'bulma';
+$color: #4e443e;
+
+@import 'bulma';
 //  @import 'uniset';
 
 body {
@@ -27,21 +28,25 @@ body {
 .nav-content {
   display: flex;
   background: #fff;
-  color: #4E443E;
+  color: $color;
   align-items: center;
+
   .nav-brand {
     display: flex;
     width: 70%;
-    border-bottom: 4px solid #4E443E;
+    border-bottom: 4px solid $color;
     padding: 10px 10px;
+
     .brand {
       grid-column: 1/3;
-    .brand-font {
-      font-family: 'Permanent Marker', cursive;
-      color: #4E443E;
-      font-size: 30px;
+
+      .brand-font {
+        font-family: 'Permanent Marker', cursive;
+        color: $color;
+        font-size: 30px;
       }
     }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -51,15 +56,18 @@ body {
       font-family: 'Lato', sans-serif;
     }
   }
+
   a {
     text-decoration: none;
-    color: #4E443E;
+    color: $color;
   }
+
   .session-box {
     margin-left: auto;
     padding: 10px 15px;
     font-family: 'Lato', sans-serif;
     width: 23%;
+
     .menu {
       display: flex;
       justify-content: space-between;
@@ -74,14 +82,16 @@ img {
 }
 
 .wrapper {
-  background: #847d7a;
+  background: #af868e;
   height: 100%;
 }
 
 .form-container {
   height: 79vh;
+
   .form-wrapper {
     display: flex;
+
     .form-item {
       margin: 0 auto;
     }
@@ -93,19 +103,23 @@ img {
   grid-template-columns: 1fr;
   grid-template-rows: 500px 150px;
   font-family: 'Lato', sans-serif;
+
   .art-img {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: flex-end;
+
     .content-con {
       padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       .art-head {
-        color: #F45F0E;
+        color: #f45f0e;
       }
+
       p {
         color: #fff;
       }
@@ -118,16 +132,19 @@ img {
   display: flex;
   align-items: flex-end;
   color: #fff;
+
   .cat-img {
     width: 25%;
     height: 100%;
-    width: 100%;
+    // width: 100%;
     display: flex;
+
     .cat-content {
       padding: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       .cat-head {
         text-decoration: underline yellow 4px;
       }
@@ -139,32 +156,39 @@ img {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+
   .article-wrapper {
-    flex:1 50%;
+    flex: 1 50%;
     display: flex;
+
     .cat-art-img {
       height: 100%;
       width: 100%;
       display: flex;
+
       .art-image {
         flex: 1;
       }
     }
+
     .art-text {
       padding: 10px;
       display: flex;
       flex-direction: column;
       background: rgba(247, 239, 239, 0.616);
+
       .art-head {
-        text-decoration: underline #F79B01 4px;
+        text-decoration: underline #f79b01 4px;
         color: #888277;
         font-size: 15px;
       }
+
       .art-title {
-        color: 4D443E;
+        color: $color;
         font-family: 'Bangers', cursive;
         margin: 10px 0;
       }
+
       p {
         font-family: 'Lato', sans-serif;
         font-size: 13px;
@@ -172,6 +196,7 @@ img {
       }
     }
   }
+
   .article-wrapper img {
     height: 100%;
     width: 100%;
@@ -183,56 +208,67 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #4E443F;
+  background: #4e443f;
   padding: 13px;
+
+  a {
+    text-decoration: none;
+  }
+
   .footer-brand {
     font-family: 'Permanent Marker', cursive;
     font-size: 30px;
+
     .footer-font {
       color: #fff;
     }
   }
+
   .copyright {
     width: 40%;
+
     .prpc {
       display: flex;
       justify-content: space-between;
       font-size: 13px;
       font-family: 'Lato', sans-serif;
+
       a {
-        color: #F45F0E;
+        color: #f45f0e;
       }
+
       .prpc-item:nth-child(3) {
         color: #fff;
       }
     }
   }
-  a {
-    text-decoration: none;
-  }
+
   .contacts {
     width: 23%;
+
     .contact-links {
       display: flex;
       font-size: 14px;
       color: white;
+
       .ul-links {
         display: flex;
         justify-content: space-between;
         width: 34%;
-        color: #F45F0E;
+        color: #f45f0e;
         margin-left: 10px;
+
         a {
           border-radius: 50%;
-          border-right: 1px solid #F45F0E;
+          border-right: 1px solid #f45f0e;
           padding: 5px;
-          background: #F45F0E;
+          background: #f45f0e;
         }
+
         i {
           color: #3c3838;
         }
       }
     }
   }
-
 }
