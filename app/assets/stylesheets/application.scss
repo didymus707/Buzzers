@@ -14,10 +14,11 @@
  *= require_self
  */
 
-$color: #4e443e;
+ $colour: #4e443e;
+ $color: #4e443e;
 
 @import 'bulma';
-//  @import 'uniset';
+@import 'uniset';
 
 body {
   max-width: 1000px;
@@ -28,7 +29,7 @@ body {
 .nav-content {
   display: flex;
   background: #fff;
-  color: $color;
+  color: $colour;
   align-items: center;
 
   .nav-brand {
@@ -42,7 +43,7 @@ body {
 
       .brand-font {
         font-family: 'Permanent Marker', cursive;
-        color: $color;
+        color: $colour;
         font-size: 30px;
       }
     }
@@ -59,7 +60,7 @@ body {
 
   a {
     text-decoration: none;
-    color: $color;
+    color: $colour;
   }
 
   .session-box {
@@ -136,7 +137,6 @@ img {
   .cat-img {
     width: 25%;
     height: 100%;
-    // width: 100%;
     display: flex;
 
     .cat-content {
@@ -179,12 +179,12 @@ img {
 
       .art-head {
         text-decoration: underline #f79b01 4px;
-        color: #888277;
+        color: $colour;
         font-size: 15px;
       }
 
       .art-title {
-        color: $color;
+        color: $colour;
         font-family: 'Bangers', cursive;
         margin: 10px 0;
       }
