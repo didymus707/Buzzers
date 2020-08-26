@@ -15,4 +15,8 @@ FactoryBot.define do
     name { 'Sports' }
     priority { 1 }
   end
+
+  factory :comment do
+    
+  end
 end

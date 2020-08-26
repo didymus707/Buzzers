@@ -47,7 +47,7 @@ body {
       left: 0;
       bottom: -4px;
 
-      &:before {
+      &::before {
         content: "";
         position: absolute;
         width: 173%;
@@ -234,7 +234,7 @@ img {
       .level {
         padding: 15px 7px;
 
-        .level-item a {
+        .level-item .link {
           color: $color;
         }
       }
