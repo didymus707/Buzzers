@@ -6,7 +6,7 @@
 
         <h2 class="title is-2">Log in</h2>
 
-        <%= simple_form_for(:sessions, url: login_path) do |f| %>
+        <%= simple_form_for(:sessions, url: sessions_path) do |f| %>
 
           <div class="field">
             <div class="control">
@@ -27,6 +27,7 @@
           </div>
           
         <% end %>
+        <br />
 
         <p class="mt">New user ? <%= link_to "Sign up now!", new_user_path %></p>
       </div>

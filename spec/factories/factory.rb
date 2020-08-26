@@ -17,6 +17,5 @@ FactoryBot.define do
   end
 
   factory :comment do
-    
   end
 end

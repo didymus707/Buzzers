@@ -15,7 +15,11 @@
 
             <div class="art-text">
               <h6 class="art-head is-5"><%= @category.name %></h6>
-              <h5 class="art-title"><%= article.title %></h5>
+              <h5 class="art-title">
+                <%= link_to article_path(article) do %>
+                  <%= article.title %>
+                <% end %>
+              </h5>
               <p class=""><%= truncate(article.text, length: 150) %></p>
               <nav class="level">
                 <div class="level-left"></div>
@@ -63,7 +67,11 @@
           <div class="article-wrapper">
             <div class="art-text">
               <h6 class="art-head is-5"><%= @category.name %></h6>
-              <h5 class="art-title"><%= article.title %></h5>
+              <h5 class="art-title">
+                <%= link_to article_path(article) do %>
+                  <%= article.title %>
+                <% end %>
+              </h5>
               <p class=""><%= truncate(article.text, length: 150) %></p>
               <nav class="level">
                 <div class="level-left"></div>

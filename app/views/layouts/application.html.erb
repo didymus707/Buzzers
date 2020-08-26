@@ -34,7 +34,7 @@
 
           <ul class="nav-links">
             <li>
-              <%= link_to root_path, class:"links" do %>
+              <%= link_to root_path, class:"links, hom" do %>
                 Home
               <% end  %>
             </li>
@@ -61,11 +61,11 @@
                 <% end %>
               </p>
               <p class="logout">
-                <%= link_to "Log Out", logout_path, method: :delete, class:"is-dark" %>
+                <%= link_to "Log Out", session_path(current_user), method: :delete, class:"is-dark" %>
               </p>
             <% else %>
               <p class="session-cta">
-                <%= link_to "LOGIN", login_path, class:"is-dark" %> | 
+                <%= link_to "LOGIN", new_session_path, class:"is-dark" %> | 
                 <%= link_to "REGISTER", new_user_path, class:"is-dark"%>
               </p>
             <% end %>

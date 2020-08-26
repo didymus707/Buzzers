@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :categories
-  get 'home/index'
   root 'home#index'
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  resources :categories
+  resource :home, only: [:index]
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :articles do
     resources :comments, only: [:create, :destroy]

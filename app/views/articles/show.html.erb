@@ -1,33 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<div class="columns">
+<div class="columns is-centered">
   <div class="column is-8">
-    <h1 class="title is-2 has-text-grey discussion-title"><%= @article.title %></h1>
-    <h3 class="subtitle is-5 has-text-grey-lighter">by <%= @article.author.username %></h3>
+    <h1 class="title is-2 has-text-grey article-title"><%= @article.title %></h1>
+    <h3 class="subtitle is-5 has-text-grey-lighter"> by <%= @article.author.username %></h3>
     <div class="level">
       <div class="level-left"></div>
       <div class="level-right">
         <% if article_path(@article) %>
-        <div class="buttons">
+          <div class="buttons">
             <%= link_to 'Edit article', edit_article_path(@article), class:'button'%>
             <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Delete article?" }, class:'button' %>
-        </div>
+          </div>
         <% end %>
       </div>
     </div>
     <figure class="image">
-      <!--<p class="image is-480x480s">
-      </p>-->
-        <%= image_tag @article.image_url, alt: 'Article image' %>
+      <%= image_tag @article.image_url, alt: 'Article image' %>
     </figure>
     <div class="content"><%= @article.text %></div>
   </div>
 
   <section>
-    <h2 class="subtitle is-5"><%= pluralize(@article.comments.count, 'comment')%></h2>
-    <%= render @article.comments %>
-    <hr />
+    <div class="container">
+      <h2 class="subtitle is-5"><%= pluralize(@article.comments.count, 'comment')%></h2>
+      <%= render @article.comments %>
+    </div>
 
+    <div id="article-comment">
+      <%= render @article.comments %>
+    </div>
+
+    <h3 class="subtitle is-3 has-text-grey">Leave a comment</h3>
+    <% if logged_in? %>
+      <%= render 'comments/form' %>
+    <% else %>
+    <p>To comment you need to <%= link_to 'login', new_user_session_path %>. Don't have an account?
+      <%= link_to 'Sign up', new_user_registration_path %> for one.</p>
+    <% end %>
   </section>
 
 </div>

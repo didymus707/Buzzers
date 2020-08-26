@@ -3,14 +3,13 @@
 <h1 class='title'>Articles</h1>
 <div class="article">
 
-  <%# <div class="level"> %>
-    <% @articles.each do |article| %>
-      <div class="level-left">
-        <article class="media">
-          <figure class="media-left">
-            <p class="image is-128x128">
-              <%= image_tag article.image_url, alt: 'Article image' %>
-            </p>
+  <% @articles.each do |article| %>
+    <div class="level-left">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-128x128">
+            <%= image_tag article.image_url, alt: 'Article image' %>
+          </p>
           <nav class="level">
             <div class="level-left"></div>
               <div class="level-right">
@@ -50,32 +49,24 @@
               </div>
             </div>
           </nav>
-          </figure>
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <%= truncate(article.text, length: 50) %>
-              </p>
-            </div>
-            <nav class="level is-mobile">
-              <div class="level-left">
-                <%= link_to 'Show', article %>
-                <%= link_to 'Edit', edit_article_path(article) %>
-                <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-            </nav>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <%= truncate(article.text, length: 50) %>
+            </p>
           </div>
-        </article>
-      </div>
-    <% end %>
-  <%# </div> %>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <%= link_to 'Show', article %>
+              <%= link_to 'Edit', edit_article_path(article) %>
+              <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </nav>
+        </div>
+      </article>
+    </div>
+  <% end %>
 </div>
 
-<!--<article class="media">
-  <div class="media-right">
-    <button class="delete"></button>
-  </div>
-</article>
-
-<%#= link_to 'New Article', new_article_path %>
 

@@ -16,6 +16,7 @@
 
 $colour: #4e443e;
 $color: #4e443e;
+$color1: #f45f0e;
 
 @import 'bulma';
 @import 'uniset';
@@ -24,6 +25,10 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   background: black;
+}
+
+.nav-container {
+  position: relative;
 }
 
 .nav-content {
@@ -77,6 +82,10 @@ body {
     color: $colour;
   }
 
+  .hom {
+    color: $color1;
+  }
+
   .session-box {
     margin-left: auto;
     padding: 10px 15px;
@@ -121,6 +130,18 @@ img {
   }
 }
 
+.new-art-wrapper {
+  padding: 20px 0;
+}
+
+.form-inputs div {
+  padding-bottom: 10px;
+}
+
+.content {
+  padding-top: 16px;
+}
+
 .main-con {
   display: grid;
   grid-template-columns: 1fr;
@@ -141,6 +162,7 @@ img {
 
       .art-head {
         color: #f45f0e;
+        padding-bottom: 8px;
       }
 
       p {
@@ -201,7 +223,7 @@ img {
       padding: 10px;
       display: flex;
       flex-direction: column;
-      background: rgba(247, 239, 239, 0.616);
+      background: #fff;
 
       .art-head {
         color: $colour;
@@ -211,7 +233,7 @@ img {
           content: "";
           position: absolute;
           border-bottom: 6px solid #f79b01;
-          width: 32%;
+          width: 42%;
           left: 10px;
           top: 26px;
         }
@@ -269,7 +291,7 @@ img {
   }
 
   .copyright {
-    width: 40%;
+    width: 41%;
 
     .prpc {
       display: flex;
