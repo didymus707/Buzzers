@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 feature 'User signs in' do
-  background do
-    User.create(name: 'Jane Doe', username: 'jodi')
+  let(:art) do
+    create(:article)
   end
 
   scenario 'with username' do
-    sign_in_with 'jodi'
+    sign_in_with art.author.username
 
     expect(page).to have_content 'Log Out'
   end
