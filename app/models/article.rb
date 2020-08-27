@@ -10,8 +10,7 @@ class Article < ApplicationRecord
   is_impressionable
   acts_as_votable
 
-  # scope :ordered_by_most_recent, -> { order(created_at: :desc) }
-
   validates_presence_of :title, :text
+  validates_length_of :text, maximum: 200, too_long: "text should not be more than 200 characters!"
   validates_presence_of :image
 end

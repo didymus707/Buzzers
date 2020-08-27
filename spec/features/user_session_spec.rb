@@ -8,7 +8,7 @@ feature 'User signs in' do
   scenario 'with username' do
     sign_in_with art.author.username
 
-    expect(page).to have_content 'Log Out'
+    expect(page).to have_content 'New Article'
   end
 
   scenario 'with invalid username' do

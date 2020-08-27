@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
 
   def show
     @categories = Category.all.ordered_by_priority
+    @article = Article.find(params[:id])
+    @comments = @article.comments
   end
 
   def new

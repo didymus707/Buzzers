@@ -19,26 +19,23 @@
       <%= image_tag @article.image_url, alt: 'Article image' %>
     </figure>
     <div class="content"><%= @article.text %></div>
+    
+    <section>
+      <div class="container">
+        <h2 class="subtitle is-5"><%= pluralize(@article.comments.count, 'comment')%></h2>
+        <%= render @article.comments %>
+      </div>
+
+      <h3 class="subtitle is-3 has-text-grey">Leave a comment</h3>
+      <% if logged_in? %>
+        <%= render 'comments/form' %>
+      <% else %>
+      <p>To comment you need to <%= link_to 'login', new_user_session_path %>. Don't have an account?
+        <%= link_to 'Sign up', new_user_registration_path %> for one.</p>
+      <% end %>
+    </section>
   </div>
 
-  <section>
-    <div class="container">
-      <h2 class="subtitle is-5"><%= pluralize(@article.comments.count, 'comment')%></h2>
-      <%= render @article.comments %>
-    </div>
-
-    <div id="article-comment">
-      <%= render @article.comments %>
-    </div>
-
-    <h3 class="subtitle is-3 has-text-grey">Leave a comment</h3>
-    <% if logged_in? %>
-      <%= render 'comments/form' %>
-    <% else %>
-    <p>To comment you need to <%= link_to 'login', new_user_session_path %>. Don't have an account?
-      <%= link_to 'Sign up', new_user_registration_path %> for one.</p>
-    <% end %>
-  </section>
 
 </div>
 

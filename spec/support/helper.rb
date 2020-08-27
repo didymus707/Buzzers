@@ -9,7 +9,7 @@ module Features
   end
 
   def sign_in_with(username)
-    visit login_path
+    visit new_session_path
 
     fill_in 'Username', with: username
 

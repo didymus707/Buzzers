@@ -6,9 +6,9 @@ FactoryBot.define do
 
   factory :article do
     author factory: :user
-    title { 'The Beatles' }
+    title { 'Suarez' }
     image { Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/fixtures/suarez.jpg'))) }
-    text { 'The beatles were legendry musicians known for great music' }
+    text { 'The former Liverpool player is about to be sold' }
   end
 
   factory :category do
@@ -17,5 +17,8 @@ FactoryBot.define do
   end
 
   factory :comment do
+    article
+    user
+    content { "One of the greatest strikers to ever play the game" }
   end
 end
