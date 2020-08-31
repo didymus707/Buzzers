@@ -14,12 +14,23 @@
  *= require_self
  */
 
-$colour: #4e443e;
+$colour: #4e443eb8;
 $color: #4e443e;
 $color1: #f45f0e;
 
 @import 'bulma';
 @import 'uniset';
+@import url(//db.onlinewebfonts.com/c/4978a1faf7fb66de08d0adeecd03c6e2?family=PIXymbolsBoxkeyW00-Regular);
+
+@font-face {
+  font-family: "PIXymbolsBoxkeyW00-Regular"; 
+  src: url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.eot"); 
+  src: url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.eot?#iefix") format("embedded-opentype"), 
+            url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.woff2") 
+            format("woff2"), url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.woff") 
+            format("woff"), url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.ttf") format("truetype"), 
+            url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.svg#PIXymbolsBoxkeyW00-Regular") format("svg"); 
+          }
 
 body {
   max-width: 1000px;
@@ -60,7 +71,7 @@ body {
       }
 
       .brand-font {
-        font-family: 'Permanent Marker', cursive;
+        font-family: "PIXymbolsBoxkeyW00-Regular";
         color: $colour;
         font-size: 30px;
       }
@@ -133,6 +144,14 @@ img {
   padding: 20px 0;
 }
 
+.checkbox span {
+  padding-right: 15px;
+}
+
+.collection_check_boxes {
+  padding-left: 5px;
+}
+
 .form-inputs div {
   padding-bottom: 10px;
 }
@@ -145,7 +164,7 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 500px 150px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Archivo Black', sans-serif;
 
   .art-img {
     height: 100%;
@@ -183,13 +202,23 @@ img {
     display: flex;
 
     .cat-content {
+      position: relative;
       padding: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
-      .cat-head {
-        text-decoration: underline yellow 4px;
+      .cat-head-link {
+        color: white;
+        
+        &::after {
+          content: "";
+          position: absolute;
+          border-bottom: 2px solid #e8f701;
+          width: 26%;
+          left: 10px;
+          top: 26px;
+        }
       }
     }
   }
@@ -232,7 +261,7 @@ img {
           content: "";
           position: absolute;
           border-bottom: 6px solid #f79b01;
-          width: 42%;
+          width: 20%;
           left: 10px;
           top: 26px;
         }
@@ -281,7 +310,8 @@ img {
   }
 
   .footer-brand {
-    font-family: 'Permanent Marker', cursive;
+    // font-family: 'Permanent Marker', cursive;
+    font-family: "PIXymbolsBoxkeyW00-Regular";
     font-size: 30px;
 
     .footer-font {

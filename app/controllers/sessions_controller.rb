@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if @user
       log_in @user
       redirect_to root_path
+      flash[:notice] = 'You are signed in'
     else
       flash[:alert] = "Incorrect username or Sign up if you don't have an account"
       render 'new'

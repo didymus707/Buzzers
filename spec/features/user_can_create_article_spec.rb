@@ -1,18 +1,30 @@
 require 'rails_helper'
 
 feature 'User can create article' do
-  let(:art) do
-    build(:article)
+  # let(:art) do
+  #   create(:article)
+  # end
+  before :each do
+    User.create(name: 'Jane Doe', username: 'jodi')
+    Article.create(title: 'Suarez', image: './spec/fixtures/suarez.jpg', text: 'One of the greatest striker ever')
   end
+  
 
   scenario 'successfully' do
-    sign_up art.author.name, art.author.username
-    sign_in_with art.author.username
+    # puts '++++++++++++++++++++++++++++++++++'
+    # puts art.new_record?
+    # puts art.author.username
+    # puts art.title
+    # puts art.image.present?
+    # puts art.text
+    # puts '++++++++++++++++++++++++++++++++++'
+    sign_up 'Jane Doe', 'jodi'
+    sign_in_with 'jodi'
     
     click_on 'New Article'
-    fill_in 'Title', with: art.title
-    attach_file 'Image', art.image
-    fill_in 'Text', with: art.text
+    fill_in 'Title', with: 'Suarez'
+    attach_file 'Image', './spec/fixtures/suarez.jpg', visible: false
+    fill_in 'Text', with: 'One of the greatest striker ever'
     check 'Sports'
     click_button 'Create Article'
     

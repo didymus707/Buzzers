@@ -17,7 +17,8 @@ class ArticlesController < ApplicationController
 
   def new
     @article = current_user.articles.build
-    @categories = Category.all
+    @max_length = Article.validators_on( :text ).first.options[:maximum]
+    @categories = Category.includes(:articles)
   end
 
   def edit; end
