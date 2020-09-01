@@ -6,9 +6,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.ordered_by_priority.includes(:articles).find(params[:id])
     @articles = @category.articles
-    @categories = Category.all.ordered_by_priority
   end
 
   def new

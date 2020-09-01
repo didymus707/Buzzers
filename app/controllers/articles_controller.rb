@@ -3,22 +3,19 @@ class ArticlesController < ApplicationController
   impressionist action: [:show], unique: %i[impressionable_type impressionable_id session_hash]
 
   def index
-    @articles = Article.all
+    @articles = Article.includes(:comments)
     @featured_article = Article.unscoped.order(cached_weighted_total: :desc).limit(1)
     @article = @featured_article.last
-    @categories = Category.all.ordered_by_priority
   end
 
   def show
-    @categories = Category.all.ordered_by_priority
     @article = Article.find(params[:id])
     @comments = @article.comments
   end
 
   def new
     @article = current_user.articles.build
-    @max_length = Article.validators_on( :text ).first.options[:maximum]
-    @categories = Category.includes(:articles)
+    @categories = Category.ordered_by_priority.includes(:articles)
   end
 
   def edit; end

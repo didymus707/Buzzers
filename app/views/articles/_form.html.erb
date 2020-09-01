@@ -61,8 +61,8 @@
 
     <div class="field">
       <label class="label">Create New Category</label>
-      <div class="control has-icons-left">
-        <span>
+      <div class="control ">
+        <span class="category">
           <%= f.simple_fields_for :categories, @article.categories.build do |fields| %>
             <%= fields.input :name %>
             <%= fields.input :priority %>
