@@ -11,6 +11,11 @@ FactoryBot.define do
     text { 'The former Liverpool player is about to be sold' }
   end
 
+  factory :article_category do
+    article
+    category
+  end
+
   factory :category do
     name { 'Sports' }
     priority { 1 }
