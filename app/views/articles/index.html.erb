@@ -7,8 +7,8 @@
     <div class="level-left">
       <article class="media">
         <figure class="media-left">
-          <p class="image is-128x128">
-            <%= image_tag article.image_url, alt: 'Article image' %>
+          <p class="image">
+            <%= cl_image_tag article.image_url(:thumbnail), alt: article.title, gravity: :face, radius: 10 %>
           </p>
           <nav class="level">
             <div class="level-left"></div>
@@ -59,7 +59,7 @@
           <nav class="level is-mobile">
             <div class="level-left">
               <%= link_to 'Show', article %>
-              <%= link_to 'Edit', edit_article_path(article) %>
+              |
               <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           </nav>
