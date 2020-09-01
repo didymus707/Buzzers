@@ -34,17 +34,8 @@
           </div>
 
           <ul class="nav-links">
-            <li>
-              <%= link_to root_path, class:"links, hom" do %>
-                Home
-              <% end  %>
-            </li>
-            <li>
-              <%= link_to articles_path, class:"links" do %>
-                Articles
-              <% end  %>
-            </li>
-            
+            <%= active_link 'Home', root_path %>
+            <%= active_link 'Articles', articles_path %>
           </ul>
         </div>
 
