@@ -1,72 +1,74 @@
-<p id="notice"><%= notice %></p>
+<div class="section">
+  <p id="notice"><%= notice %></p>
 
-<h1 class='title'>Articles</h1>
-<div class="article">
+  <h1 class='title'>Articles</h1>
+  <div class="article">
 
-  <% @articles.each do |article| %>
-    <div class="level-left">
-      <article class="media">
-        <figure class="media-left">
-          <p class="image">
-            <%= cl_image_tag article.image_url(:thumbnail), alt: article.title, gravity: :face, radius: 10 %>
-          </p>
-          <nav class="level">
-            <div class="level-left"></div>
-              <div class="level-right">
-              <div class="level-item views data">
-                <%= link_to article do %>
-                  <span class="icon"><i class="fa fa-eye"></i></span>
-                  <%= article.impressionist_count %>
-                <% end %>
-              </div>
-              <div class="level-item comments data">
-                <%= link_to article do %>
-                  <span class="icon"><i class="fa fa-comment"></i></span>
-                  <%= article.comments.count %>
-                <% end %>
-              </div>
-              <div class="level-item likes">
-                <% if logged_in? %>
-                  
-                  <% if current_user.liked? article %>
-                    <%= link_to unlike_article_path(article), method: :put, class: "unlike_article" do %>
-                      <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-                      <span class="vote_count"><%= article.get_likes.size %></span>
+    <% @articles.each do |article| %>
+      <div class="level-left">
+        <article class="media">
+          <figure class="media-left">
+            <p class="image">
+              <%= cl_image_tag article.image_url(:thumbnail), alt: article.title, gravity: :face, radius: 10 %>
+            </p>
+            <nav class="level">
+              <div class="level-left"></div>
+                <div class="level-right has-background-black">
+                <div class="level-item views data">
+                  <%= link_to article do %>
+                    <span class="icon"><i class="fa fa-eye"></i></span>
+                    <%= article.impressionist_count %>
+                  <% end %>
+                </div>
+                <div class="level-item comments data">
+                  <%= link_to article do %>
+                    <span class="icon"><i class="fa fa-comment"></i></span>
+                    <%= article.comments.count %>
+                  <% end %>
+                </div>
+                <div class="level-item likes">
+                  <% if logged_in? %>
+                    
+                    <% if current_user.liked? article %>
+                      <%= link_to unlike_article_path(article), method: :put, class: "unlike_article" do %>
+                        <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                        <span class="vote_count"><%= article.get_likes.size %></span>
+                      <% end %>
+                    <% else %>
+                      <%= link_to like_article_path(article), method: :put, class: "like_article" do %>
+                        <span class="icon"><i class="fa fa-heart"></i></span>
+                        <span class="vote_count"><%= article.get_likes.size %></span>
+                      <% end %>
                     <% end %>
                   <% else %>
-                    <%= link_to like_article_path(article), method: :put, class: "like_article" do %>
-                      <span class="icon"><i class="fa fa-heart"></i></span>
-                      <span class="vote_count"><%= article.get_likes.size %></span>
-                    <% end %>
+                      <%= link_to like_article_path(article), method: :put, class: "like_article" do %>
+                        <span class="icon"><i class="fa fa-heart"></i></span>
+                        <span class="vote_count"><%= article.get_likes.size %></span>
+                      <% end %>
                   <% end %>
-                <% else %>
-                    <%= link_to like_article_path(article), method: :put, class: "like_article" do %>
-                      <span class="icon"><i class="fa fa-heart"></i></span>
-                      <span class="vote_count"><%= article.get_likes.size %></span>
-                    <% end %>
-                <% end %>
 
+                </div>
               </div>
+            </nav>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <%= truncate(article.text, length: 50) %>
+              </p>
             </div>
-          </nav>
-        </figure>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <%= truncate(article.text, length: 50) %>
-            </p>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <%= link_to 'Show', article %>
+                |
+                <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </nav>
           </div>
-          <nav class="level is-mobile">
-            <div class="level-left">
-              <%= link_to 'Show', article %>
-              |
-              <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-          </nav>
-        </div>
-      </article>
-    </div>
-  <% end %>
+        </article>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 

@@ -31,12 +31,11 @@ gem 'acts_as_votable'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bulma-rails'
 gem 'carrierwave', '~> 2.0'
+gem 'cloudinary'
 gem 'factory_bot_rails'
 gem 'impressionist'
 gem 'mini_magick'
 gem 'simple_form'
-gem 'cloudinary'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

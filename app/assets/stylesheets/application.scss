@@ -23,14 +23,17 @@ $color1: #f45f0e;
 @import url(//db.onlinewebfonts.com/c/4978a1faf7fb66de08d0adeecd03c6e2?family=PIXymbolsBoxkeyW00-Regular);
 
 @font-face {
-  font-family: "PIXymbolsBoxkeyW00-Regular"; 
-  src: url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.eot"); 
-  src: url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.eot?#iefix") format("embedded-opentype"), 
-            url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.woff2") 
-            format("woff2"), url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.woff") 
-            format("woff"), url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.ttf") format("truetype"), 
-            url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.svg#PIXymbolsBoxkeyW00-Regular") format("svg"); 
-          }
+  font-family: "PIXymbolsBoxkeyW00-Regular";
+  src: url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.eot");
+  src:
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.woff2")
+    format("woff2"),
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.woff")
+    format("woff"),
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.svg#PIXymbolsBoxkeyW00-Regular") format("svg");
+}
 
 body {
   max-width: 1000px;
@@ -71,7 +74,7 @@ body {
       }
 
       .brand-font {
-        font-family: "PIXymbolsBoxkeyW00-Regular";
+        font-family: "PIXymbolsBoxkeyW00-Regular", sans-serif;
         color: $colour;
         font-size: 30px;
       }
@@ -80,7 +83,7 @@ body {
     .nav-links {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-evenly;
       margin-left: auto;
       width: 60%;
       font-family: 'Lato', sans-serif;
@@ -120,12 +123,18 @@ img {
   height: 100%;
 
   .section {
-    height: 100vh;
+    height: 95vh;
 
     .container {
       height: 50%;
     }
   }
+}
+
+// article index
+
+.article .level-left:not(:first-child) {
+  padding-top: 12px;
 }
 
 .form-container {
@@ -210,7 +219,7 @@ img {
 
       .cat-head-link {
         color: white;
-        
+
         &::after {
           content: "";
           position: absolute;
@@ -310,8 +319,7 @@ img {
   }
 
   .footer-brand {
-    // font-family: 'Permanent Marker', cursive;
-    font-family: "PIXymbolsBoxkeyW00-Regular";
+    font-family: "PIXymbolsBoxkeyW00-Regular", sans-serif;
     font-size: 30px;
 
     .footer-font {
