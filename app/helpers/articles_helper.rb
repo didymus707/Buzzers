@@ -17,7 +17,7 @@ module ArticlesHelper
         render partial: 'partials/articles/like_article', locals: { article: article }
       end
     else
-      render partial: 'partials/articles/like_article'
+      render partial: 'partials/articles/like_article', locals: { article: article }
     end
   end
 
