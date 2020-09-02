@@ -1,0 +1,9 @@
+<p class="new-art">
+  <%= link_to new_article_path, class:"is-primary"  do %>
+    <span class="icon is-small"><i class="fa fa-upload"></i></span>
+    <span>New Article</span>
+  <% end %>
+</p>
+<p class="logout">
+  <%= link_to "Log Out", session_path(current_user), method: :delete, class:"is-dark" %>
+</p>

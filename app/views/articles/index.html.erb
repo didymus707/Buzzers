@@ -8,11 +8,9 @@
         <article class="media">
           <figure class="media-left">
             <p class="image">
-              <%= cl_image_tag article.image_url(:thumbnail), alt: article.title, gravity: :face, radius: 10 %>
-            </p>
+              <%= cl_image_tag article.image_url(:thumbnail), alt: article.title %>
             <nav class="level">
-              <div class="level-left"></div>
-                <div class="level-right has-background-black">
+              <div class="level-right has-background-black df">
                 <div class="level-item views data">
                   <%= link_to article do %>
                     <span class="icon"><i class="fa fa-eye"></i></span>
@@ -49,6 +47,7 @@
                 </div>
               </div>
             </nav>
+            </p>
           </figure>
           <div class="media-content">
             <div class="content">
