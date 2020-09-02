@@ -27,12 +27,7 @@
       </div>
 
       <h3 class="subtitle is-3 has-text-grey">Leave a comment</h3>
-      <% if logged_in? %>
-        <%= render 'comments/form' %>
-      <% else %>
-      <p>To comment you need to <%= link_to 'login', new_user_session_path %>. Don't have an account?
-        <%= link_to 'Sign up', new_user_registration_path %> for one.</p>
-      <% end %>
+      <%= comments_form %>
     </section>
   </div>
 

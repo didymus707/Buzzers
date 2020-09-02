@@ -29,7 +29,11 @@ module ApplicationHelper
 
   # articles_show
   def comments_form
-    
+    if logged_in?
+      render partial: 'comments/form'
+    else
+      render partial: 'partials/articles/comment_signup'
+    end
   end
 
   # articles_index
