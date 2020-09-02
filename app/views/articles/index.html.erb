@@ -24,7 +24,7 @@
                   <% end %>
                 </div>
                 <div class="level-item likes">
-                  <%= like_unlike %>
+                  <%= like_unlike(article) %>
                 </div>
               </div>
             </nav>
@@ -33,7 +33,7 @@
           <div class="media-content">
             <div class="content">
               <p>
-                <%= truncate(article.text, length: 50) %>
+                <%= truncate(article.text, length: 250) %>
               </p>
             </div>
             <nav class="level is-mobile">

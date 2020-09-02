@@ -134,7 +134,7 @@ img {
 // ----------------------- article index -----------------------
 
 .article .level-left:not(:first-child) {
-  padding-top: 12px;
+  padding-top: 5px;
 }
 
 .df {
@@ -155,6 +155,10 @@ img {
       margin: 0 auto;
     }
   }
+}
+
+.dnone {
+  display: none;
 }
 
 .new-art-wrapper {

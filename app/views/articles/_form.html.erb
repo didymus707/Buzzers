@@ -1,7 +1,7 @@
-<%= simple_form_for(@article) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for(@article) do |foo| %>
+  <%= foo.error_notification %>
 
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= foo.error_notification message: foo.object.errors[:base].to_sentence if foo.object.errors[:base].present? %>
   <ul>
     <% @article.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -11,7 +11,7 @@
   <div class="form-inputs">
     <div class="field">
       <div class="control">
-        <%= f.input :title,
+        <%= foo.input :title,
                     required: true,
                     autofocus: true,
                     input_html: { class: 'input' },
@@ -23,7 +23,7 @@
 
     <div class="field">
       <div class="control">
-        <%= f.input :image,
+        <%= foo.input :image,
                     as: :file,
                     required: true,
                     wrapper: false,
@@ -34,7 +34,7 @@
 
     <div class="field">
       <div class="control">
-        <%= f.input :text,
+        <%= foo.input :text,
                     required: true,
                     input_html: { class: 'textarea' },
                     wrapper: false,
@@ -48,7 +48,7 @@
       <label class="label">Category</label>
       <div class="control">
         <span class="checkbox">
-          <%= f.collection_check_boxes :category_ids, 
+          <%= foo.collection_check_boxes :category_ids, 
                                         Category.all,
                                         :id,
                                         :name,
@@ -59,22 +59,13 @@
     </div>
     <% end %>
 
-    <div class="field">
-      <label class="label">Create New Category</label>
-      <div class="control ">
-        <span class="category">
-          <%= f.simple_fields_for :categories, @article.categories.build do |fields| %>
-            <%= fields.input :name %>
-            <%= fields.input :priority %>
-          <% end %>
-        </span>
-      </div>
-    </div>
+    
+    <%= hide_form(@categories, foo) %>
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: "button is-info" %>
+    <%= foo.button :submit, class: "button is-info" %>
   </div>
 <% end %>
 <br />

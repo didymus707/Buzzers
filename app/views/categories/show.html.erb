@@ -4,8 +4,8 @@
 	<div class="container">
 
 		<div class="category-container">
-      <% @articles.each do |article| %>
-       <%= change_style(article).html_safe? %>
+      <% @articles.each_with_index do |article, i| %>
+       <%= change_style(article, i) %>
       <% end %>
 		</div>
 	</div>
