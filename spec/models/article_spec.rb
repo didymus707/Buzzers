@@ -2,11 +2,9 @@ require 'rails_helper'
 require 'carrierwave/test/matchers'
 
 RSpec.describe Article, type: :model do
-  include CarrierWave::Test::Matchers
+  # include CarrierWave::Test::Matchers
 
-  let(:art) do
-    create(:article)
-  end
+  art = FactoryBot.build(:article)
 
   it 'is valid' do
     expect(art).to be_valid

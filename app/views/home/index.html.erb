@@ -1,17 +1,6 @@
 <main class="main-con">
   <div class="main-art-con">
-  <% if @article.present? %>
-    <div class="art-img" style="background: url(<%= @article.image_url %>); background-size: 100% 100%; background-repeat: no-repeat; background-position: center">
-      <div class="content-con">
-        <% if @article.image.present? %>
-          <h5 class="art-head"><%= @article.title %></h5>
-          <p class="art-con">
-            <%= truncate(@article.text, length: 100) %>
-          </p>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+    <%= featured_article(@article) %>
   </div>
 
   <div class="categories">

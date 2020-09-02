@@ -14,17 +14,18 @@ RSpec.describe Comment, type: :model do
     expect(reply).to_not be_valid
   end
 
-  it 'is valid with a character less than 50' do
+  it 'is valid with characters less than 150' do
     reply.content = 'a' * 49
     expect(reply).to be_valid
   end
 
-  it 'is invalid with a character greater than 50' do
-    reply.content = 'a' * 51
+  it 'is invalid with characters greater than 150' do
+    reply.content = 'a' * 151
     expect(reply).to_not be_valid
   end
 
   describe 'Validations' do
+    it { should validate_presence_of(:content) }
     it { should validate_length_of(:content) }
   end
 
