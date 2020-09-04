@@ -215,8 +215,15 @@ img {
       justify-content: space-between;
 
       .art-head {
-        color: #f45f0e;
         padding-bottom: 8px;
+
+        .art-head-link {
+          color: #f45f0e;
+
+          &:hover {
+            color: white;
+          }
+        }
       }
 
       p {
