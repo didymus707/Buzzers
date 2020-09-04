@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy like unlike]
-  impressionist action: [:show], unique: %i[impressionable_type impressionable_id session_hash]
+  impressionist action: [:show], unique: [:session_hash]
 
   def index
     @articles = Article.includes(:comments)
@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.includes(:comments).find(params[:id])
     @comments = @article.comments
   end
 

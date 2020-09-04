@@ -12,10 +12,14 @@
         <%= article.title %>
       <% end %>
     </h5>
-    <p class=""><%= truncate(article.text, length: 150) %></p>
+    <p class=""><%= truncate(article.text, length: 100) %></p>
+    <div class="author-corner">
+      <h5 class="author-name"><%= article.author.name %></h5>
+      <small class="author-title">Author</small>
+    </div>
     <nav class="level">
       <div class="level-left"></div>
-        <div class="level-right">
+      <div class="level-right">
         <div class="level-item views data">
           <%= link_to article, class: 'link' do %>
             <span class="icon"><i class="fa fa-eye"></i></span>

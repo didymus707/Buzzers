@@ -11,6 +11,7 @@ class Article < ApplicationRecord
   acts_as_votable
 
   validates_presence_of :title, :text, :image
+  validates :title, length: { maximum: 50 }
   validates :text, length: { maximum: 800 }
   validates :title, :text, uniqueness: true
 end

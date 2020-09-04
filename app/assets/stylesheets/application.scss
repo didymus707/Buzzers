@@ -133,6 +133,15 @@ img {
 
 // ----------------------- article index -----------------------
 
+.article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article-box {
+  flex: 1 1 45%;
+}
+
 .article .level-left:not(:first-child) {
   padding-top: 5px;
 }
@@ -245,6 +254,7 @@ img {
   }
 }
 
+// _______________ categories show _______________________________
 .category-container {
   display: flex;
   width: 100%;
@@ -318,6 +328,21 @@ img {
     object-fit: cover;
   }
 }
+
+.author-corner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 7px;
+  font-family: 'Bangers', cursive;
+  color: #3a73dd;
+}
+
+.author-title {
+  font-size: 12px;
+}
+// _______________ categories show _______________________________
+
 
 .footer {
   display: flex;

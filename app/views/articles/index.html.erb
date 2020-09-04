@@ -4,7 +4,7 @@
   <h1 class='title'>Articles</h1>
   <div class="article">
     <% @articles.each do |article| %>
-      <div class="level-left">
+      <div class="level-left article-box">
         <article class="media">
           <figure class="media-left">
             <p class="image">
@@ -32,8 +32,13 @@
           </figure>
           <div class="media-content">
             <div class="content">
+              <h5 class="art-title">
+                <%= link_to article_path(article) do %>
+                  <%= article.title %>
+                <% end %>
+              </h5>
               <p>
-                <%= truncate(article.text, length: 250) %>
+                <%= truncate(article.text, length: 150) %>
               </p>
             </div>
             <nav class="level is-mobile">

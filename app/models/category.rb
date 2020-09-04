@@ -5,4 +5,5 @@ class Category < ApplicationRecord
   scope :ordered_by_priority, -> { order(priority: :desc) }
 
   validates_presence_of :name, :priority
+  validates :name, length: { maximum: 15 }
 end
