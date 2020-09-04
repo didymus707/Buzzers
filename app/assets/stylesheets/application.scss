@@ -142,6 +142,12 @@ img {
   flex: 1 1 45%;
 }
 
+.text {
+  word-spacing: 3px;
+  letter-spacing: 0.5px;
+  margin-right: 15px
+}
+
 .article .level-left:not(:first-child) {
   padding-top: 5px;
 }
@@ -335,11 +341,15 @@ img {
   align-items: flex-end;
   padding-top: 7px;
   font-family: 'Bangers', cursive;
-  color: #3a73dd;
 }
 
 .author-title {
   font-size: 12px;
+}
+
+.author-name {
+  font-size: 17px;
+  font-weight: bold;
 }
 // _______________ categories show _______________________________
 

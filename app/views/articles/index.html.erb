@@ -30,7 +30,7 @@
             </nav>
             </p>
           </figure>
-          <div class="media-content">
+          <div class="media-content text">
             <div class="content">
               <h5 class="art-title">
                 <%= link_to article_path(article) do %>
@@ -38,16 +38,13 @@
                 <% end %>
               </h5>
               <p>
-                <%= truncate(article.text, length: 150) %>
+                <%= truncate(article.text, length: 120) %>
               </p>
             </div>
-            <nav class="level is-mobile">
-              <div class="level-left">
-                <%= link_to 'Show', article %>
-                |
-                <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-            </nav>
+            <div class="author-corner">
+              <h5 class="author-name"><%= article.author.name %></h5>
+              <small class="author-title">Author</small>
+            </div>
           </div>
         </article>
       </div>
