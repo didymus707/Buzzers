@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy like unlike]
-  impressionist action: [:show], unique: [:session_hash]
+  impressionist action: [:show], unique: %i[impressionable_type impressionable_id session_hash]
 
   def index
     @articles = Article.includes(:comments)
@@ -15,7 +15,10 @@ class ArticlesController < ApplicationController
 
   def new
     @article = current_user.articles.build
-    @categories = Category.ordered_by_priority.includes(:articles)
+    @categories = Category.ordered_by_priority
+    puts '============================================='
+    puts @categories.size
+    puts '============================================='
   end
 
   def edit; end

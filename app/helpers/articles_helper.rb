@@ -20,12 +20,4 @@ module ArticlesHelper
       render partial: 'partials/articles/like_article', locals: { article: article }
     end
   end
-
-  # hide fcategory form
-  def hide_form(cat, foo)
-    class_name = cat.size == 4 ? 'field dnone' : 'field'
-    content_tag(:div, class: class_name) do
-      render partial: 'partials/category/new_category', locals: { foo: foo }
-    end
-  end
 end
