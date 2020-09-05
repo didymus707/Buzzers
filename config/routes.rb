@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create, :destroy]
     member do
-      put 'like', to: 'articles#like'
-      put 'unlike', to: 'articles#unlike'
+      get 'like', to: 'articles#like'
+      get 'unlike', to: 'articles#unlike'
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

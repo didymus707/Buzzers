@@ -12,7 +12,7 @@ class Article < ApplicationRecord
 
   validates_presence_of :title, :text, :image
   validates_presence_of :categories
-  validates :title, length: { maximum: 50 }
+  validates :title, length: { maximum: 70 }
   validates :text, length: { maximum: 800 }
   validates :title, :text, uniqueness: true
 end

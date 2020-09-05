@@ -35,10 +35,10 @@ $color1: #f45f0e;
     url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.svg#PIXymbolsBoxkeyW00-Regular") format("svg");
 }
 
-body {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+// body {
+//   max-width: 1000px;
+//   margin: 0 auto;
+// }
 
 .nav-container {
   position: relative;
@@ -68,7 +68,7 @@ body {
       &::before {
         content: "";
         position: absolute;
-        width: 173%;
+        width: 250%;
         bottom: -4px;
         border-bottom: 5px solid $color;
       }
@@ -199,7 +199,7 @@ img {
 .main-con {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 500px 150px;
+  grid-template-rows: 80vh 40vh;
   font-family: 'Archivo Black', sans-serif;
 
   .art-img {
@@ -360,12 +360,20 @@ img {
 }
 // _______________ categories show _______________________________
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #4e443f;
-  padding: 13px;
+.foota {
+  position: relative;
+
+  .footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4e443f;
+    padding: 13px;
+  }
 
   a {
     text-decoration: none;

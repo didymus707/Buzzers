@@ -8,6 +8,17 @@ module ArticlesHelper
     end
   end
 
+  def present_category(cat, foo)
+    render partial: 'partials/category/present_category', locals: { foo: foo } if cat.present?
+  end
+
+  def hide_form(cat, foo)
+    class_name = cat.size == 4 ? 'field dnone' : 'field'
+    content_tag(:div, class: class_name) do
+      render partial: 'partials/category/new_category', locals: { foo: foo }
+    end
+  end
+
   # article index
   def like_unlike(article)
     if logged_in?

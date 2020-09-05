@@ -30,7 +30,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :standard do
+  version :main do
+    # process resize_to_fill: [577, 325]
+    cloudinary_transformation aspect_ratio: '16:9', height: 325, width: 577, crop: 'scale'
+  end
+
+  version :standard, from_version: :main do
     process eager: true
     cloudinary_transformation height: 180, width: 200, quality: 'auto:best', crop: 'scale'
   end

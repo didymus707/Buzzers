@@ -43,21 +43,9 @@
       </div>
     </div>
 
-    <% if @categories.present? %>  
-    <div class="field">
-      <label class="label">Category</label>
-      <div class="control">
-        <span class="checkbox">
-          <%= foo.collection_check_boxes :category_ids, 
-                                        Category.all,
-                                        :id,
-                                        :name,
-                                        label_html: { class: 'label checkbox' }
-          %>
-        </span>
-      </div>
-    </div>
-    <% end %>
+    <%= present_category(@categories, foo) %>
+    
+    <%= hide_form(@categories, foo) %>
 
   </div>
 

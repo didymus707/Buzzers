@@ -1,4 +1,4 @@
-<%= link_to like_article_path(article), method: :put, class: "like_article" do %>
+<%= link_to like_article_path(article), class: "like_article" do %>
   <span class="icon"><i class="fa fa-heart"></i></span>
   <span class="vote_count"><%= article.get_likes.size %></span>
 <% end %>

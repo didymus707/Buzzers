@@ -16,7 +16,7 @@
       </div>
     </div>
     <figure class="image">
-      <%= cl_image_tag @article.image_url(:standard), alt: @article.title, gravity: :face, radius: 10 %>
+      <%= cl_image_tag @article.image_url(:main), alt: @article.title%>
     </figure>
     <div class="content"><%= @article.text %></div>
     

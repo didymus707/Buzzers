@@ -16,15 +16,13 @@ class ArticlesController < ApplicationController
   def new
     @article = current_user.articles.build
     @categories = Category.ordered_by_priority
-    puts '============================================='
-    puts @categories.size
-    puts '============================================='
   end
 
   def edit; end
 
   def create
     @article = current_user.articles.build(article_params)
+    @categories = Category.ordered_by_priority
 
     respond_to do |format|
       if @article.save

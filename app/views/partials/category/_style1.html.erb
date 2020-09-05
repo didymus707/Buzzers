@@ -33,26 +33,7 @@
           <% end %>
         </div>
         <div class="level-item likes">
-          <% if logged_in? %>
-            
-            <% if current_user.liked? article %>
-              <%= link_to unlike_article_path(article), method: :put, class: "unlike_article link" do %>
-                <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-                <span class="vote_count"><%= article.get_likes.size %></span>
-              <% end %>
-            <% else %>
-              <%= link_to like_article_path(article), method: :put, class: "like_article link" do %>
-                <span class="icon"><i class="fa fa-heart"></i></span>
-                <span class="vote_count"><%= article.get_likes.size %></span>
-              <% end %>
-            <% end %>
-          <% else %>
-              <%= link_to like_article_path(article), method: :put, class: "like_article link" do %>
-                <span class="icon"><i class="fa fa-heart"></i></span>
-                <span class="vote_count"><%= article.get_likes.size %></span>
-              <% end %>
-          <% end %>
-
+          <%= like_unlike(article)%>
         </div>
       </div>
     </nav>
