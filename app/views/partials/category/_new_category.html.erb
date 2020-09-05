@@ -1,0 +1,9 @@
+<label class="label">Create New Category</label>
+<div class="control ">
+  <span class="category">
+    <%= foo.simple_fields_for :categories, @article.categories.build do |fields| %>
+      <%= fields.input :name %>
+      <%= fields.input :priority %>
+    <% end %>
+  </span>
+</div>

@@ -1,0 +1,22 @@
+<main class="main-con">
+  <div class="main-art-con">
+    <%= featured_article(@article) %>
+  </div>
+
+  <div class="categories">
+    <% @categories.each do |cat| %>
+      <div class="cat-img" style="background: url(<%= cat.articles.first.image_url %>); background-size: 100% 100%; background-repeat: no-repeat; background-position: center">
+        <div class="cat-content">
+          <h5 class="cat-head">
+            <%= link_to category_path(cat), class: "cat-head-link" do %>
+              <%= cat.name %>
+            <% end  %>
+          </h5>
+          <p class="cat-con">
+            <%= truncate(cat.articles.first.title, length: 50) %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>

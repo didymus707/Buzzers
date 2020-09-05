@@ -1,0 +1,8 @@
+<div class="art-img" style="background: url(<%= @article.image_url %>); background-size: 100% 100%; background-repeat: no-repeat; background-position: center">
+  <div class="content-con">
+    <h5 class="art-head"><%= link_to @article.title, article_path(@article), class: 'art-head-link' %></h5>
+    <p class="art-con">
+      <%= truncate(@article.text, length: 120) %>
+    </p>
+  </div>
+</div>

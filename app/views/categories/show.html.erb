@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="section">
+	<div class="container">
+
+		<div class="category-container">
+      <% @articles.each_with_index do |article, i| %>
+       <%= change_style(article, i) %>
+      <% end %>
+		</div>
+	</div>
+</div>
+
+

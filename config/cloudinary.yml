@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: didymus
+  api_key: '466245969811227'
+  api_secret: SsLNZwkmSj96XHrv3vHFK6VHVTA
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: didymus
+  api_key: '466245969811227'
+  api_secret: SsLNZwkmSj96XHrv3vHFK6VHVTA
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: didymus
+  api_key: '466245969811227'
+  api_secret: SsLNZwkmSj96XHrv3vHFK6VHVTA
+  enhance_image_tag: true
+  static_file_support: false

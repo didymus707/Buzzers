@@ -1,0 +1,4 @@
+<%= link_to unlike_article_path(article), class: "unlike_article" do %>
+  <span class="icon"><i class="fa fa-heart has-text-danger"></i></span>
+  <span class="vote_count"><%= article.get_likes.size %></span>
+<% end %>

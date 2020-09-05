@@ -1,0 +1,438 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$colour: #4e443eb8;
+$color: #4e443e;
+$color1: #f45f0e;
+
+@import 'bulma';
+@import 'uniset';
+@import url(//db.onlinewebfonts.com/c/4978a1faf7fb66de08d0adeecd03c6e2?family=PIXymbolsBoxkeyW00-Regular);
+
+@font-face {
+  font-family: "PIXymbolsBoxkeyW00-Regular";
+  src: url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.eot");
+  src:
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.woff2")
+    format("woff2"),
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.woff")
+    format("woff"),
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/4978a1faf7fb66de08d0adeecd03c6e2.svg#PIXymbolsBoxkeyW00-Regular") format("svg");
+}
+
+// body {
+//   max-width: 1000px;
+//   margin: 0 auto;
+// }
+
+.nav-container {
+  position: relative;
+}
+
+.nav-content {
+  display: flex;
+  background: #fff;
+  color: $colour;
+  align-items: center;
+
+  .nav-brand {
+    display: flex;
+    width: 70%;
+    border-bottom: 4px solid $colour;
+    padding: 10px 10px;
+    position: relative;
+    height: 66px;
+
+    .brand {
+      grid-column: 1/3;
+      border-bottom: 4px solid $color;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 250%;
+        bottom: -4px;
+        border-bottom: 5px solid $color;
+      }
+
+      .brand-font {
+        font-family: "PIXymbolsBoxkeyW00-Regular", sans-serif;
+        color: $colour;
+        font-size: 30px;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-left: auto;
+      width: 60%;
+      font-family: 'Lato', sans-serif;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $colour;
+  }
+
+  .nav-links .hom {
+    color: #f45f0e;
+  }
+
+  .session-box {
+    margin-left: auto;
+    padding: 10px 15px;
+    font-family: 'Lato', sans-serif;
+    width: 23%;
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  background: #fff;
+  height: 100%;
+
+  .section {
+    height: 100%;
+
+    .container {
+      height: 50%;
+    }
+  }
+}
+
+// ----------------------- article index -----------------------
+
+.article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article-box {
+  flex: 1 1 45%;
+}
+
+.text {
+  word-spacing: 3px;
+  letter-spacing: 0.5px;
+  margin-right: 15px;
+}
+
+.article .level-left:not(:first-child) {
+  padding-top: 5px;
+}
+
+.df {
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+// ----------------------- article index -------------------------
+
+.form-container {
+  height: 79vh;
+
+  .form-wrapper {
+    display: flex;
+
+    .form-item {
+      margin: 0 auto;
+    }
+  }
+}
+
+.dnone {
+  display: none;
+}
+
+.new-art-wrapper {
+  padding: 20px 0;
+}
+
+.checkbox span {
+  padding-right: 15px;
+}
+
+.collection_check_boxes {
+  padding-left: 5px;
+}
+
+.form-inputs div {
+  padding-bottom: 10px;
+}
+
+.content {
+  padding-top: 16px;
+}
+
+.main-con {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80vh 40vh;
+  font-family: 'Archivo Black', sans-serif;
+
+  .art-img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    .content-con {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .art-head {
+        padding-bottom: 8px;
+
+        .art-head-link {
+          color: #f45f0e;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.categories {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+
+  .cat-img {
+    width: 25%;
+    height: 100%;
+    display: flex;
+
+    .cat-content {
+      position: relative;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .cat-head-link {
+        color: white;
+
+        &::after {
+          content: "";
+          position: absolute;
+          border-bottom: 2px solid #e8f701;
+          width: 26%;
+          left: 10px;
+          top: 26px;
+        }
+      }
+    }
+  }
+}
+
+// _______________ categories show _______________________________
+.category-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 100%;
+
+  .article-wrapper {
+    flex: 1 50%;
+    display: flex;
+    height: 100%;
+
+    .cat-art-img {
+      height: 100%;
+      width: 50%;
+      display: flex;
+
+      .art-image {
+        flex: 1;
+      }
+    }
+
+    .art-text {
+      width: 50%;
+      position: relative;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+
+      .art-head {
+        color: $colour;
+        font-size: 15px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          border-bottom: 6px solid #f79b01;
+          width: 20%;
+          left: 10px;
+          top: 26px;
+        }
+      }
+
+      .art-title {
+        color: $colour;
+        font-family: 'Bangers', cursive;
+        padding-top: 20px;
+      }
+
+      p {
+        font-family: 'Lato', sans-serif;
+        font-size: 13px;
+        color: #0000008f;
+        padding-top: 13px;
+        letter-spacing: 1px;
+      }
+
+      .level {
+        padding: 15px 7px;
+
+        .level-item .link {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  .article-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.author-corner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 7px;
+  font-family: 'Bangers', cursive;
+}
+
+.author-title {
+  font-size: 12px;
+}
+
+.author-name {
+  font-size: 17px;
+  font-weight: bold;
+}
+// _______________ categories show _______________________________
+
+.foota {
+  position: relative;
+
+  .footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4e443f;
+    padding: 13px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .footer-brand {
+    font-family: "PIXymbolsBoxkeyW00-Regular", sans-serif;
+    font-size: 30px;
+
+    .footer-font {
+      color: #fff;
+    }
+  }
+
+  .copyright {
+    width: 41%;
+
+    .prpc {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-family: 'Lato', sans-serif;
+
+      a {
+        color: #f45f0e;
+      }
+
+      .prpc-item:nth-child(3) {
+        color: #fff;
+      }
+    }
+  }
+
+  .contacts {
+    width: 23%;
+
+    .contact-links {
+      display: flex;
+      font-size: 14px;
+      color: white;
+
+      .ul-links {
+        display: flex;
+        justify-content: space-between;
+        width: 34%;
+        color: #f45f0e;
+        margin-left: 10px;
+
+        a {
+          border-radius: 50%;
+          border-right: 1px solid #f45f0e;
+          padding: 5px;
+          background: #f45f0e;
+        }
+
+        i {
+          color: #3c3838;
+        }
+      }
+    }
+  }
+}
