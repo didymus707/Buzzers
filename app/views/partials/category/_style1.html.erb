@@ -1,0 +1,42 @@
+<div class="article-wrapper">
+  <div class="cat-art-img">
+    <div class="art-image">
+      <%= image_tag article.image_url(:thumbnail), alt: article.title %>
+    </div>
+  </div>
+
+  <div class="art-text">
+    <h6 class="art-head is-5"><%= @category.name %></h6>
+    <h5 class="art-title">
+      <%= link_to article_path(article) do %>
+        <%= article.title %>
+      <% end %>
+    </h5>
+    <p class=""><%= truncate(article.text, length: 100) %></p>
+    <div class="author-corner">
+      <h5 class="author-name"><%= article.author.name %></h5>
+      <small class="author-title">Author</small>
+    </div>
+    <nav class="level">
+      <div class="level-left"></div>
+      <div class="level-right">
+        <div class="level-item views data">
+          <%= link_to article, class: 'link' do %>
+            <span class="icon"><i class="fa fa-eye"></i></span>
+            <%= article.impressionist_count %>
+          <% end %>
+        </div>
+        <div class="level-item comments data">
+          <%= link_to article, class: 'link' do %>
+            <span class="icon"><i class="fa fa-comment"></i></span>
+            <%= article.comments.count %>
+          <% end %>
+        </div>
+        <div class="level-item likes">
+          <%= like_unlike(article)%>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p class="has-text-left">
+          <%= comment.content %>
+          
+          <br/>
+        </p>
+        <span class="has-text-right"><strong><%= comment.user.username %></strong> <small><%= time_ago_in_words(comment.created_at) %> ago</small></span>
+      </div>
+    </div>
+  </article>
+</div>

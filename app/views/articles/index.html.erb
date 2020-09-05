@@ -1,0 +1,55 @@
+<div class="section">
+  <p id="notice"><%= notice %></p>
+
+  <h1 class='title'>Articles</h1>
+  <div class="article">
+    <% @articles.each do |article| %>
+      <div class="level-left article-box">
+        <article class="media">
+          <figure class="media-left">
+            <p class="image">
+              <%= cl_image_tag article.image_url(:thumbnail), alt: article.title %>
+            <nav class="level">
+              <div class="level-right has-background-black df">
+                <div class="level-item views data">
+                  <%= link_to article do %>
+                    <span class="icon"><i class="fa fa-eye"></i></span>
+                    <%= article.impressionist_count %>
+                  <% end %>
+                </div>
+                <div class="level-item comments data">
+                  <%= link_to article do %>
+                    <span class="icon"><i class="fa fa-comment"></i></span>
+                    <%= article.comments.count %>
+                  <% end %>
+                </div>
+                <div class="level-item likes">
+                  <%= like_unlike(article) %>
+                </div>
+              </div>
+            </nav>
+            </p>
+          </figure>
+          <div class="media-content text">
+            <div class="content">
+              <h5 class="art-title">
+                <%= link_to article_path(article) do %>
+                  <%= article.title %>
+                <% end %>
+              </h5>
+              <p>
+                <%= truncate(article.text, length: 120) %>
+              </p>
+            </div>
+            <div class="author-corner">
+              <h5 class="author-name"><%= article.author.name %></h5>
+              <small class="author-title">Author</small>
+            </div>
+          </div>
+        </article>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

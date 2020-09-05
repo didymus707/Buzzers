@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buzzers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//db.onlinewebfonts.com/c/c4cb3cbbe1dea16fea2d3390eccf973c?family=L" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lato:wght@100&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/ed33990053.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <% if flash[:notice] %>
+      <div class="notification is-primary global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="notification is-danger global-notification">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+    <nav class="nav-container" role="navigation" aria-label="main navigation">
+      <div class="nav-content">
+        <div class="nav-brand">
+          <div class="brand">
+            <%= link_to root_path, class:"navbar-item" do %>
+              <h1 class="brand-font">Buzzers.</h1>
+            <% end  %>
+          </div>
+
+          <ul class="nav-links">
+            <li>
+              <%= link_to root_path, class:"links, hom" do %>
+                Home
+              <% end  %>
+            </li>
+            <li>
+              <%= link_to articles_path, class:"links" do %>
+                Articles
+              <% end  %>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="session-box">
+          <div class="menu">
+            <%= new_art_session %>
+            <span class="icon is-small"><i class="fa fa-search"></i></i></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <section class="wrapper">
+      <div class="inner-wrapper">
+        <%= yield %>
+      </div>
+    </section>
+
+    <footer class="foota">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <%= link_to root_path, class:"footer-brand-item" do %>
+            <h1 class="footer-font">Buzzers.</h1>
+          <% end  %>
+        </div>
+        <div class="copyright">
+          <ul class="prpc">
+            <li class="prpc-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li class="prpc-item">
+              <a href="#">Terms & Condition</a>
+            </li>
+            <li class="prpc-item">Copyright 2020. All rights reserved.</li>
+          </ul>
+        </div>
+        <div class="contacts">
+          <div class="contact-links">
+            Connect with us:
+            <ul class="ul-links">
+              <li>
+                <a href="#">
+                  <span><i class="fab fa-twitter-square"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span><i class="fab fa-instagram"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span><i class="fab fa-facebook-f"></i></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
