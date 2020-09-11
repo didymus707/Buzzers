@@ -120,7 +120,7 @@ img {
 
 .wrapper {
   background: #fff;
-  height: 100%;
+  height: 120vh;
 
   .section {
     height: 100%;
@@ -199,7 +199,7 @@ img {
 .main-con {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 80vh 40vh;
+  grid-template-rows: 77vh 35vh;
   font-family: 'Archivo Black', sans-serif;
 
   .art-img {
@@ -361,17 +361,19 @@ img {
 // _______________ categories show _______________________________
 
 .foota {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 1200px;
+  background: #4e443f;
+
 
   .footer-container {
-    position: fixed;
     bottom: 0;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #4e443f;
     padding: 13px;
   }
 
