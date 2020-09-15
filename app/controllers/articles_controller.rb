@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:comments)
-    @featured_article = Article.unscoped.order(cached_votes_score: :desc).limit(1)
+    @featured_article = Article.unscoped.order(cached_votes_up: :desc).limit(1)
     @article = @featured_article.last
   end
 
