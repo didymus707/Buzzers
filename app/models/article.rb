@@ -15,4 +15,5 @@ class Article < ApplicationRecord
   validates :title, length: { maximum: 70 }
   validates :text, length: { maximum: 800 }
   validates :title, :text, uniqueness: true
+  
 end
